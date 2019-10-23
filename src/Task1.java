@@ -21,17 +21,20 @@ public class Task1 {
         System.out.println("Contains ones number: " + countContainsOnes);
 
         int[] resultNumbers = new int[countContainsOnes];
+        int start = 1;
 
         if (countContainsOnes > 1) {
             for (int i = 0; i < countContainsOnes - 1; i++) {
-                for (int j = 1; j < numbers.length; j++) {
+                for (int j = start; j < numbers.length; j++) {
                     if (numbers[j] == '0') {
                         result++;
-                    }else
+                    } else {
+                        resultNumbers[i] = result;
+                        System.out.println(result);
+                        start = numbers[j];
                         break;
+                    }
                 }
-                resultNumbers[i] = result;
-                System.out.println(result);
                 result = 0;
             }
             return Arrays.stream(resultNumbers).max().getAsInt();
@@ -42,7 +45,8 @@ public class Task1 {
 
     public static void main(String[] args) {
 
-        int result = new Task1().solution(1041);
+        int result = new Task1().solution(66561);
+        System.out.println("Result: " + result);
 
     }
 }

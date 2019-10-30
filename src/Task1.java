@@ -3,7 +3,6 @@ import java.util.Collections;
 
 public class Task1 {
 
-
     private int solution(int N) {
         String binaryValue = Integer.toBinaryString(N);
 
@@ -31,7 +30,7 @@ public class Task1 {
                     } else {
                         resultNumbers[i] = result;
                         System.out.println(result);
-                        start = numbers[j];
+                        start = ++j;
                         break;
                     }
                 }
@@ -39,13 +38,13 @@ public class Task1 {
             }
             return Arrays.stream(resultNumbers).max().getAsInt();
         }
-
         return 0;
     }
 
     public static void main(String[] args) {
 
         int result = new Task1().solution(66561);
+//        int result = new Task1().solution(96561);
         System.out.println("Result: " + result);
 
     }

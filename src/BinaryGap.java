@@ -1,7 +1,6 @@
 import java.util.Arrays;
-import java.util.Collections;
 
-public class Task1 {
+public class BinaryGap {
 
     private int solution(int N) {
         String binaryValue = Integer.toBinaryString(N);
@@ -43,7 +42,7 @@ public class Task1 {
 
     public static void main(String[] args) {
 
-        int result = new Task1().solution(66561);
+        int result = new BinaryGap().solution(66561);
 //        int result = new Task1().solution(96561);
         System.out.println("Result: " + result);
 

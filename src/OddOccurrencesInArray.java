@@ -1,27 +1,19 @@
-import java.util.ArrayList;
+import java.util.Arrays;
 
 public class OddOccurrencesInArray {
 
     public int solution(int[] A) {
 
-        int count = 0;
-        for (int i = 0; i < A.length; i++) {
-            for (int j = 0; j < A.length; j++) {
-                if (A[i] == A[j]) {
-                    ++count;
-                }
-            }
-            if (count == 1) {
-                return A[i];
-            } else {
-                count = 0;
-            }
+        Arrays.sort(A);
+        int i= 0;
+        while (i < A.length - 1 && A[i] == A[i + 1]) {
+            i = i + 2;
         }
-        return 0;
+        return A[i];
     }
 
     public static void main(String[] args) {
-        int result = new OddOccurrencesInArray().solution(new int[]{9, 3, 11, 3, 5, 5, 9});
+        int result = new OddOccurrencesInArray().solution(new int[]{9, 3, 1, 3, 5, 5, 9});
         System.out.println(result);
     }
 }

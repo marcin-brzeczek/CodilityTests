@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 public class TapeEqulibrum {
 
-    public int solution(int A[]) {
+    public int solution(int[] A) {
         int partOne = 0;
         int partTwo = 0;
         int difference;

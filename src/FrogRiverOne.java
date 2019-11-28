@@ -8,14 +8,10 @@ public class FrogRiverOne {
         int result = -1;
         int count = 0;
 
-        //last element
-        if (A[size - 1] == X)
-            return A[size - 1];
-
-//        //single element
-//        if (A[0] != 1) {
-//            return -1;
-//        }
+        //single element
+        if (A.length ==1 && A[0] != 1) {
+            return -1;
+        }
 
         //missing element
         int[] sortedArray = Arrays.copyOf(A, A.length);

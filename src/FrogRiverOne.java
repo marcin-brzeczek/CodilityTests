@@ -9,13 +9,18 @@ public class FrogRiverOne {
         int count = 0;
 
         //single element
-        if (A.length ==1 && A[0] != 1) {
+        if (A.length == 1 && A[0] != 1) {
             return -1;
         }
 
         //missing element
         int[] sortedArray = Arrays.copyOf(A, A.length);
         Arrays.sort(sortedArray);
+
+        //check if first element contains 1 - it's required
+        if(sortedArray[0] !=1)
+            return -1;
+
         for (int i = 0; i < size - 1; i++) {
             if (sortedArray[i + 1] - sortedArray[i] > 1)
                 return -1;
@@ -46,7 +51,9 @@ public class FrogRiverOne {
         // 3, [1, 3, 1, 3, 2, 1, 3] (got 6 expected 4).
         // 4, [1, 1, 3, 1, 4, 3, 2, 5, 3, 4, 6, 7] = 6
         // 50, [12,34,45,11,100,83,2,3] = 5
-        int result = new FrogRiverOne().solution(8, new int[]{6, 1, 3, 7, 4, 3, 2, 8, 5});
+        // 2, [2,2,2,2]
+        //  8, [6, 1, 3, 7, 4, 3, 2, 8, 5]
+        int result = new FrogRiverOne().solution(2, new int[]{2, 2, 2, 2});
         System.out.println(result);
     }
 }
